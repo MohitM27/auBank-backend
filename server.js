@@ -39,7 +39,7 @@ app.get("/api/dashboard", (req, res) => {
   const customerData = salesData.find(sale => sale["Customer ID"] === customerId);
   const customerName = customerData ? customerData["Customer Name"] : "";
   const allSalesByCustomerId = salesData.filter(sale => 
-    // sale["Customer ID"] === customerId &&
+   sale["Customer ID"] === customerId &&
    sale.State === state);
   const filteredSales = allSalesByCustomerId.reduce((totals, sale) => {
     const orderDate = moment(sale["Order Date"], "YYYY-MM-DD");
